@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- Head -->
+
+	<head>
+	
+		<meta charset="utf-8" />
+		
+		<!-- css -->
+		
+			<link rel="stylesheet" href="res/Noyeux_Ajiversaire.css" />
+			
+			<noscript>
+				<link rel="stylesheet" href="res/Noyeux_Ajiversaire_Dynamique.css" />
+			</noscript>
+			
+		<!-- /css -->
+		
+		<!-- JavaScripts externes linké en dernières lignes du body -->
+		
+		<title> Noyeux Ajiversaire Stefef </title>
+		
+	</head>
+	
+<!-- /Head --> 
+
+<!-- Body -->
+
+	<body>
+	
+	<!-- Coeur -->
+	
+		<p>
+			<input type="range" id="jsCoeur_frequence_range" title="fréquence des battements de coeur"  value="5" min="0" max="15" step="1" />
+				<br/>
+			<input type="range" id="jsCoeur_vitesse_range" title="vitesse des coups de coeur"  value="5" min="0" max="15" step="1" />
+				<br/>
+			<input type="button" id="jsCoeur_button" title="^^"  value="HeartBreathing" />
+			
+				<span class="InfoBulle" id="jsCoeur_button_Sup" >
+					Un petit bug s'était glissé sur l'imbrication SetInterval{SetTimeout(range)}(range)
+					<br/> &emsp;
+					si je jouais avec pendant les battements,
+					<br/> &emsp;
+					je faisais varier la vitesse des coup de coeurs,
+					<br/> &emsp;
+					mais pas la fréquence des battements.
+					<br/>
+					<i> J'ai essayer de transformer ce bug en utilisation voulue avec 2 ranges, </i>
+					<br/> &emsp;
+					<i> mais c'est moins bien :'( </i>
+				</span>
+		</p>
+	
+		<p class="pCoeur">
+			
+			<audio id="jsCoeur_son_in" >
+				<source src="res/Coeur/coeur_in.ogg" type="audio/ogg" />
+				<source src="res/Coeur/coeur_in.wav" type="audio/wav" />
+			</audio>
+			
+			<audio id="jsCoeur_son_out" >
+				<source src="res/Coeur/coeur_out.ogg" type="audio/ogg" />
+				<source src="res/Coeur/coeur_out.wav" type="audio/wav" />
+			</audio>
+			
+			<noscript>
+				<audio id="Coeur_son"  controls loop >
+					<source src="res/Coeur/coeur.ogg" type="audio/ogg" />
+					<source src="res/Coeur/coeur.wav" type="audio/wav" />
+				</audio>
+			</noscript>
+			
+			<img src="res/Coeur/Coeur.png" alt="Pitit coeur dessigné (contraction de dessiné et designé) by me" id="Coeur_img" />
+			<img src="res/Coeur/Fond.png" alt="anneau de loumière" id="Coeur_fond"  title="^^" />
+			
+		</p>
+	
+	<!-- /Coeur -->
+		
+	<!-- Happy Birthday -->
+		
+		<p class="pHappyBday" >
+			<span class="HappyBday" id="HappyBday_jsbutton" > (; Happy Everything ;) </span>
+			
+				<span class="InfoBulle" id="jsHappyBday_jsbutton_Sup" >
+					&lArr; Clique pour recevoir un pitit cadeau :
+					<br/>
+					(; playlist avec lecteur intégré ;)
+				</span>
+		</p>
+		
+	<!-- /Happy Birthday -->
+		
+	<!-- Chansons -->
+		
+		<div class="Audio" id="Chansons" >
+		
+			<p id="jsPlayers" >
+				
+				<audio class="Player" id="jsAudio_Belle"  controls preload="metadata" >
+					<source src="res/Musik/01 - T'es Belle.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Etoile"  controls preload="metadata" >
+					<source src="res/Musik/02 - Poussière d'Étoile.wav" type="audio/wav" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Rtrouve"  controls preload="metadata" >
+					<source src="res/Musik/03 - J'ai r'trouvé.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Apocalyptico"  controls preload="metadata" >
+					<source src="res/Musik/04 - Apocalypticodramatic.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Roy"  controls preload="metadata" >
+					<source src="res/Musik/05 - Mrs Roy.wav" type="audio/wav" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_FilleFleur"  controls preload="metadata" >
+					<source src="res/Musik/06 - Fille en fleur.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Saison"  controls preload="metadata" >
+					<source src="res/Musik/07 - Une Saison de trop.wav" type="audio/wav" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Dimanche"  controls preload="metadata" >
+					<source src="res/Musik/08 - Dimanche.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Berk"  controls preload="metadata" >
+					<source src="res/Musik/09 - This Is Berk.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_Forbiden"  controls preload="metadata" >
+					<source src="res/Musik/10 - Forbidden Friendship.mp3" type="audio/mpeg" />
+				</audio>
+				
+				<audio class="Player" id="jsAudio_WakeUp"  controls preload="metadata" >
+					<source src="res/Musik/11 - Wake Up And Smell The Coffee.mp3" type="audio/mpeg" />
+				</audio>
+					
+				<audio class="Player" id="jsAudio_DyingSun"  controls preload="metadata" >
+					<source src="res/Musik/12 - Dying In The Sun.mp3" type="audio/mpeg" />
+				</audio>
+			
+			</p>
+			
+			<p>
+				<span id="jsAudio_Belle_button" > Volo -- <i>Jours heureux</i> -- T'es Belle </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Belle" >
+						Volo -- <i>Jours heureux</i> -- T'es Belle
+					</a>
+					
+					<audio class="Player" id="Audio_Belle"  controls preload="metadata" >
+						<source src="res/Musik/01 - T'es Belle.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Etoile_button" > Tryo -- <i>Ce que l'on sème</i> -- Poussière d'Étoile </span>
+			
+				<noscript>
+				<a class="aPlayer" href="#Audio_Etoile" >
+					Tryo -- <i>Ce que l'on sème</i> -- Poussière d'Étoile
+				</a>
+				
+				<audio class="Player" id="Audio_Etoile"  controls preload="metadata" >
+					<source src="res/Musik/02 - Poussière d'Étoile.wav" type="audio/wav" />
+				</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Rtrouve_button" > Volo -- <i>En atendant</i> -- J'ai r'trouvé </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Rtrouve" >
+						Volo -- <i>En atendant</i> -- J'ai r'trouvé
+					</a>
+					
+					<audio class="Player" id="Audio_Rtrouve"  controls preload="metadata" >
+						<source src="res/Musik/03 - J'ai r'trouvé.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Apocalyptico_button" > Tryo -- <i>Grain de sable</i> -- Apocalypticodramatic </span>
+			
+				<noscript>
+					<a  class="aPlayer" href="#Audio_Apocalyptico" >
+						Tryo -- <i>Grain de sable</i> -- Apocalypticodramatic
+					</a>
+					
+					<audio class="Player" id="Audio_Apocalyptico"  controls preload="metadata" >
+						<source src="res/Musik/04 - Apocalypticodramatic.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Roy_button" > Tryo -- <i>Ce que l'on sème</i> -- Mrs Roy </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Roy" >
+						Tryo -- <i>Ce que l'on sème</i> -- Mrs Roy
+					</a>
+					
+					<audio class="Player" id="Audio_Roy"  controls preload="metadata" >
+						<source src="res/Musik/05 - Mrs Roy.wav" type="audio/wav" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_FilleFleur_button" > Volo -- <i>Bien Zarbos</i> -- Fille en fleur </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_FilleFleur" >
+						Volo -- <i>Bien Zarbos</i> -- Fille en fleur
+					</a>
+					
+					<audio class="Player" id="Audio_FilleFleur"  controls preload="metadata" >
+						<source src="res/Musik/06 - Fille en fleur.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Saison_button" > Tryo -- <i>Ce que l'on sème</i> -- Une Saison de trop </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Saison" >
+						Tryo -- <i>Ce que l'on sème</i> -- Une Saison de trop
+					</a>
+					
+					<audio class="Player" id="Audio_Saison"  controls preload="metadata" >
+						<source src="res/Musik/07 - Une Saison de trop.wav" type="audio/wav" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Dimanche_button" > Volo -- <i>En Attendant</i> -- Dimanche </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Dimanche" >
+						Volo -- <i>En Attendant</i> -- Dimanche
+					</a>
+					
+					<audio class="Player" id="Audio_Dimanche"  controls preload="metadata" >
+						<source src="res/Musik/08 - Dimanche.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Berk_button" > John Powell -- <i>How to Train your Dragon</i> -- This is Berk </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Berk" >
+						John Powell -- <i>How to Train your Dragon</i> -- This is Berk
+					</a>
+					
+					<audio class="Player" id="Audio_Berk"  controls preload="metadata" >
+						<source src="res/Musik/09 - This Is Berk.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_Forbiden_button" > John Powell -- <i>How to Train your Dragon</i> -- Forbidden Friendship </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_Forbiden" >
+						John Powell -- <i>How to Train your Dragon</i> -- Forbidden Friendship
+					</a>
+					
+					<audio class="Player" id="Audio_Forbiden"  controls preload="metadata" >
+						<source src="res/Musik/10 - Forbidden Friendship.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_WakeUp_button" > The Cramberries -- <i>Wake Up And Smell The Coffee</i> -- Wake Up And Smell The Coffee </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_WakeUp" >
+						The Cramberries -- <i>Wake Up And Smell The Coffee</i> -- Wake Up And Smell The Coffee
+					</a>
+					
+					<audio class="Player" id="Audio_WakeUp"  controls preload="metadata" >
+						<source src="res/Musik/11 - Wake Up And Smell The Coffee.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+			<p>
+				<span id="jsAudio_DyingSun_button" > The Cramberries -- <i>Bury The Hatchet</i> -- Dying in the Sun </span>
+			
+				<noscript>
+					<a class="aPlayer" href="#Audio_DyingSun" >
+						The Cramberries -- <i>Bury The Hatchet</i> -- Dying in the Sun
+					</a>
+					
+					<audio class="Player" id="Audio_DyingSun"  controls preload="metadata" >
+						<source src="res/Musik/12 - Dying In The Sun.mp3" type="audio/mpeg" />
+					</audio>
+				</noscript>
+			</p>
+		
+		</div>
+		
+		<footer>
+			<hr/>
+			<p>
+				<strong> Specially developped for Stefef <i>(by Mouton Galeux)</i> </strong>
+			</p>
+		</footer>
+		
+	<!-- sources JavaScript -->
+
+		<script src="res/Noyeux_Ajiversaire_Coeur.js" type="text/javascript" ></script>
+		<script src="res/Noyeux_Ajiversaire_Chansons.js" type="text/javascript" ></script>
+		
+	<!-- /sources JavaScript -->
+		
+	</body>
+	
+<!-- /Body -->
+
+</html>
+
+
+
+
+
+
+
+
+
+

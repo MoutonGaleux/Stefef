@@ -1,0 +1,60 @@
+
+/* -------------------------------------------- */
+	/* 
+		fichier css pour Noyeux_Ajiversaire
+		
+		mode dynamique
+	*/
+/* -------------------------------------------- */
+	
+	
+			
+			#Coeur_son
+			{
+				display : block;
+			}
+			
+			[id ^= "js"]
+			{
+				display : none;
+			}
+			
+			#HappyBday_jsbutton
+			{
+				cursor : auto;
+			}
+	
+	
+	/* Animations */
+	
+		#Coeur_img:hover
+		{
+			width : 400px;
+			
+			margin : 20px 50px 0px;
+		}
+			
+	/* -------------------------------------------- */
+	
+	/* Audio Player */
+	
+		.Audio
+		{
+			display : block;
+		}
+		
+		.Player:target
+		{
+			display : block;
+		}
+			
+	/* -------------------------------------------- */
+	
+	
+	
+	
+	
+	
+	
+	
+	
